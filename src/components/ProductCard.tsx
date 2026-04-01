@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ShoppingCart } from 'lucide-react';
 import type { Product } from '../types';
-import { useCart } from '../context/CartContext';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -9,7 +7,6 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { addToCart } = useCart();
 
 
   return (
@@ -31,14 +28,6 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="product-card-prices">
             <span className="product-card-price">${product.price.toFixed(2)}</span>
           </div>
-          <button
-            className="product-card-cart-btn"
-            id={`add-to-cart-${product.id}`}
-            onClick={() => addToCart(product)}
-            aria-label={`Add ${product.name} to cart`}
-          >
-            <ShoppingCart size={16} />
-          </button>
         </div>
       </div>
     </div>

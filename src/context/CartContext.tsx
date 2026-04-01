@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import type { CartItem, Product } from '../types';
+import { products } from '../data/products';
 
 interface CartContextType {
   cartItems: CartItem[];
@@ -14,7 +15,12 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const initialCart: CartItem[] = [
+    { ...products[0], quantity: 1, selectedSize: 'Medium', selectedColor: 'White' },
+    { ...products[1], quantity: 2, selectedSize: 'Large', selectedColor: 'Brown' },
+    { ...products[2], quantity: 1, selectedSize: 'Medium', selectedColor: 'Black' }
+  ];
+  const [cartItems, setCartItems] = useState<CartItem[]>(initialCart);
 
   const addToCart = (product: Product) => {
     setCartItems((prev) => {

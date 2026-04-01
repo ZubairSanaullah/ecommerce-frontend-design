@@ -1,217 +1,520 @@
-.product-detail {
-  padding: 32px 24px 48px;
-  text-align: left;
+/* PREMIUM ALIBABA-STYLE PRODUCT DETAIL PAGE */
+.alibaba-product-detail {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background-color: #f7f8fa; /* standard ecommerce gentle background */
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #111827;
 }
 
-.back-link {
-  display: inline-flex;
+.breadcrumb {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.5rem;
+}
+
+.breadcrumb a {
+  color: #4b5563;
   text-decoration: none;
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   transition: color 0.2s;
 }
 
-.back-link:hover {
-  color: var(--accent);
+.breadcrumb a:hover {
+  color: #2563eb;
 }
 
-.detail-grid {
+.alibaba-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 400px 1fr 320px;
+  gap: 2rem;
   align-items: start;
 }
 
-.detail-image-wrap {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #f3f4f6;
+/* Left Gallery - Premium Glass/Shadow */
+.alibaba-gallery {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 2rem;
 }
 
-
-
-.detail-image {
-  width: 100%;
+.main-image-wrapper {
   aspect-ratio: 1;
-  object-fit: cover;
-  display: block;
-}
-
-.detail-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 8px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.detail-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.detail-category {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--accent);
-}
-
-.detail-name {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
-  color: var(--text-h);
-}
-
-.detail-rating {
+  width: 100%;
+  border-radius: 12px;
+  background: #f8fafc;
+  margin-bottom: 1.5rem;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
 }
 
-.stars {
+.main-image {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.main-image-wrapper:hover .main-image {
+  transform: scale(1.08); /* slight zoom on hover */
+}
+
+.product-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+.thumbnail-list {
   display: flex;
-  gap: 2px;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
 }
 
-.rating-text {
-  font-size: 14px;
-  color: var(--text);
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  border: 2px solid transparent;
+  background: #f8fafc;
+  border-radius: 8px;
+  cursor: pointer;
+  object-fit: contain;
+  padding: 4px;
+  transition: all 0.2s ease;
 }
 
-.detail-prices {
+.thumbnail:hover {
+  background: #f1f5f9;
+}
+
+.thumbnail.active {
+  border-color: #f97316; /* Vibrant Orange */
+  background: white;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
+}
+
+/* Center Details */
+.alibaba-info {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.product-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.product-stats {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-top: 4px;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  color: #4b5563;
 }
 
-.detail-price {
-  font-size: 32px;
+.stars { display: flex; align-items: center; gap: 2px; }
+.rating-score { color: #f59e0b; font-weight: 700; font-size: 1.1rem;}
+.reviews-count { color: #2563eb; cursor: pointer; text-decoration: underline;}
+.orders-count { color: #6b7280; font-weight: 500;}
+
+.price-block {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2.5rem;
+  border: 1px solid #fde68a;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-block::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+  transform: skewX(-20deg);
+}
+
+.current-price {
+  font-size: 2.5rem;
   font-weight: 800;
-  color: var(--text-h);
+  color: #d97706; /* Rich amber orange */
+  text-shadow: 0 1px 2px rgba(217, 119, 6, 0.1);
 }
 
-.detail-original {
-  font-size: 18px;
-  color: var(--text);
+.original-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #9ca3af;
   text-decoration: line-through;
 }
 
-.detail-discount-tag {
-  font-size: 13px;
-  font-weight: 600;
-  color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-
-.detail-description {
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.detail-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 8px;
-}
-
-.quantity-control {
-  display: flex;
-  align-items: center;
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.quantity-control button {
-  width: 40px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.discount-badge {
+  background: #ef4444;
+  color: white;
   border: none;
-  background: transparent;
-  color: var(--text-h);
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.price-note {
+  font-size: 0.9rem;
+  color: #78350f;
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+.variations-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 2.5rem;
+}
+
+.variation-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.variation-item.align-top {
+  align-items: flex-start;
+}
+
+.variation-label {
+  width: 80px;
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.variation-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.var-btn {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
   cursor: pointer;
+  transition: all 0.2s;
+}
+
+.var-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.var-btn.active {
+  border-color: #f97316;
+  color: #ea580c;
+  background: #fff7ed;
+  box-shadow: 0 0 0 1px #f97316;
+}
+
+.product-description-text {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.purchase-actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quantity-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.quantity-control-styled {
+  display: flex;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 44px;
+}
+
+.quantity-control-styled button {
+  background: #f3f4f6;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #4b5563;
   transition: background 0.2s;
 }
 
-.quantity-control button:hover {
-  background: var(--accent-bg);
+.quantity-control-styled button:hover {
+  background: #e5e7eb;
 }
 
-.quantity-control span {
-  width: 40px;
+.quantity-control-styled input {
+  width: 60px;
   text-align: center;
+  border: none;
+  border-left: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db;
+  outline: none;
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 15px;
-  color: var(--text-h);
 }
 
-.add-btn {
-  flex: 1;
-  justify-content: center;
-  height: 48px;
-  font-size: 16px;
-}
-
-.detail-perks {
+.action-buttons-styled {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 16px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
+  gap: 1.5rem;
 }
 
-.perk {
+.alibaba-buy-btn {
+  /* Rich gradient orange for massive impact */
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  border: none;
+  color: white;
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(234, 88, 12, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.alibaba-cart-btn {
+  /* Rich gradient amber for cart */
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border: none;
+  color: white;
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: 40px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text);
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(217, 119, 6, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.perk svg {
-  color: var(--accent);
+.alibaba-buy-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(234, 88, 12, 0.4); }
+.alibaba-cart-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(217, 119, 6, 0.4); }
+
+.perk-list-styled {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+  font-weight: 500;
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-.product-not-found {
-  padding: 80px 24px;
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Right Sidebar Seller Info */
+.alibaba-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.supplier-card, .share-save-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.supplier-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.supplier-logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  color: #4f46e5;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.supplier-name h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  color: #111827;
+}
+
+.supplier-type {
+  font-size: 0.85rem;
+  color: #059669;
+  background: #d1fae5;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.supplier-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
   text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.stat-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-value {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.supplier-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.btn-outline-blue {
+  background: white;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-outline-blue:hover {
+  background: #eff6ff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.1);
+}
+
+.w-full { width: 100%; }
+
+.share-save-card {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+}
+
+.btn-icon-text {
+  background: none;
+  border: none;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.btn-icon-text:hover { color: #f97316; }
+
+@media (max-width: 1200px) {
+  .alibaba-layout {
+    grid-template-columns: 1fr 300px;
+  }
+  .alibaba-gallery {
+    grid-column: 1 / 2;
+    margin-bottom: 2rem;
+  }
+  .alibaba-info {
+    grid-column: 1 / 2;
+  }
 }
 
 @media (max-width: 768px) {
-  .detail-grid {
+  .alibaba-layout {
     grid-template-columns: 1fr;
-    gap: 24px;
   }
-
-  .detail-name {
-    font-size: 24px;
-  }
-
-  .detail-price {
-    font-size: 28px;
+  .action-buttons-styled {
+    flex-direction: column;
   }
 }
