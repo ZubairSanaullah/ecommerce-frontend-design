@@ -291,7 +291,7 @@ export default function Home() {
         </div>
         <div className="product-grid">
           {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} hideCart />
           ))}
         </div>
       </section>

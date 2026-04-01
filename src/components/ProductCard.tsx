@@ -6,9 +6,10 @@ import './ProductCard.css';
 
 interface ProductCardProps {
   product: Product;
+  hideCart?: boolean;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, hideCart = false }: ProductCardProps) {
   const { addToCart } = useCart();
 
 
@@ -31,14 +32,16 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="product-card-prices">
             <span className="product-card-price">${product.price.toFixed(2)}</span>
           </div>
-          <button
-            className="product-card-cart-btn"
-            id={`add-to-cart-${product.id}`}
-            onClick={() => addToCart(product)}
-            aria-label={`Add ${product.name} to cart`}
-          >
-            <ShoppingCart size={16} />
-          </button>
+          {!hideCart && (
+            <button
+              className="product-card-cart-btn"
+              id={`add-to-cart-${product.id}`}
+              onClick={() => addToCart(product)}
+              aria-label={`Add ${product.name} to cart`}
+            >
+              <ShoppingCart size={16} />
+            </button>
+          )}
         </div>
       </div>
     </div>

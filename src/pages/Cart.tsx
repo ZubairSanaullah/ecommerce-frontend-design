@@ -1,97 +1,170 @@
 import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowRight } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Headset, Truck, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { products } from '../data/products';
 import './Cart.css';
 
 export default function Cart() {
   const { cartItems, removeFromCart, updateQuantity, cartTotal, clearCart } = useCart();
-
-  if (cartItems.length === 0) {
-    return (
-      <div className="cart-empty" id="cart-page">
-        <div className="cart-empty-icon">
-          <ShoppingBag size={64} strokeWidth={1} />
-        </div>
-        <h2>Your cart is empty</h2>
-        <p>Looks like you haven't added any products yet.</p>
-        <Link to="/products" className="btn btn-primary" id="continue-shopping-btn">
-          Continue Shopping <ArrowRight size={18} />
-        </Link>
-      </div>
-    );
-  }
+  const savedForLaterProducts = products.slice(0, 4);
 
   return (
     <div className="cart-page" id="cart-page">
       <div className="cart-header">
-        <h1>Shopping Cart</h1>
-        <button className="clear-cart-btn" onClick={clearCart} id="clear-cart-btn">
-          Clear Cart
-        </button>
+        <h1>My cart ({cartItems.length})</h1>
       </div>
 
       <div className="cart-layout">
-        <div className="cart-items">
-          {cartItems.map((item) => (
-            <div key={item.id} className="cart-item" id={`cart-item-${item.id}`}>
-              <Link to={`/product/${item.id}`} className="cart-item-image-link">
-                <img src={item.image} alt={item.name} className="cart-item-image" />
-              </Link>
-              <div className="cart-item-info">
-                <Link to={`/product/${item.id}`} className="cart-item-name">{item.name}</Link>
-                <span className="cart-item-category">{item.category}</span>
-                <span className="cart-item-price">${item.price.toFixed(2)}</span>
-              </div>
-              <div className="cart-item-actions">
-                <div className="quantity-control">
-                  <button onClick={() => updateQuantity(item.id, item.quantity - 1)} aria-label="Decrease">
-                    <Minus size={14} />
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => updateQuantity(item.id, item.quantity + 1)} aria-label="Increase">
-                    <Plus size={14} />
-                  </button>
+        <div className="cart-main-content">
+          <div className="cart-items-container">
+            {cartItems.map((item, index) => (
+              <div key={item.id}>
+                <div className="cart-item" id={`cart-item-${item.id}`}>
+                  <Link to={`/product/${item.id}`} className="cart-item-image-link">
+                    <img src={item.image} alt={item.name} className="cart-item-image" />
+                  </Link>
+                  <div className="cart-item-info">
+                    <Link to={`/product/${item.id}`} className="cart-item-name">{item.name}</Link>
+                    <div className="cart-item-details">
+                      <p>Size: Medium, Color: Blue, Material: Plastic</p>
+                      <p>Seller: Artel Market</p>
+                    </div>
+                    <div className="cart-item-actions-row">
+                      <button 
+                        className="item-action-btn remove-text-btn"
+                        onClick={() => removeFromCart(item.id)}
+                      >
+                        Remove
+                      </button>
+                      <button className="item-action-btn save-later-btn">
+                        Save for later
+                      </button>
+                    </div>
+                  </div>
+                  <div className="cart-item-right">
+                    <span className="cart-item-price">${item.price.toFixed(2)}</span>
+                    <div className="quantity-dropdown-wrap">
+                      <label htmlFor={`qty-${item.id}`}>Qty:</label>
+                      <select 
+                        id={`qty-${item.id}`} 
+                        value={item.quantity}
+                        onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                        className="qty-select"
+                      >
+                        {[...Array(10)].map((_, i) => (
+                          <option key={i + 1} value={i + 1}>{i + 1}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
                 </div>
-                <button
-                  className="remove-btn"
-                  onClick={() => removeFromCart(item.id)}
-                  aria-label={`Remove ${item.name}`}
-                >
-                  <Trash2 size={16} />
-                </button>
+                {index < cartItems.length - 1 && <div className="item-divider"></div>}
               </div>
-              <div className="cart-item-total">
-                ${(item.price * item.quantity).toFixed(2)}
+            ))}
+            
+            <div className="cart-container-footer">
+              <Link to="/products" className="btn-back-shop">
+                <ArrowRight size={18} style={{ transform: 'rotate(180deg)' }} /> Back to shop
+              </Link>
+              <button className="btn-remove-all" onClick={clearCart}>
+                Remove all
+              </button>
+            </div>
+          </div>
+
+          <div className="trust-features">
+            <div className="trust-item">
+              <div className="trust-icon-wrap"><ShieldCheck size={20} /></div>
+              <div className="trust-text">
+                <h4>Secure Payment</h4>
+                <p>Have you ever heard of?</p>
+              </div>
+            </div>
+            <div className="trust-item">
+              <div className="trust-icon-wrap"><Headset size={20} /></div>
+              <div className="trust-text">
+                <h4>Customer Support</h4>
+                <p>Have you ever heard of?</p>
+              </div>
+            </div>
+            <div className="trust-item">
+              <div className="trust-icon-wrap"><Truck size={20} /></div>
+              <div className="trust-text">
+                <h4>Free Delivery</h4>
+                <p>Have you ever heard of?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="cart-summary">
+          <div className='coupon-section'>
+            <h3>Have a coupon?</h3>
+            <div className='coupon-input'>
+              <input type="text" placeholder="Add coupon" />
+              <button>Apply</button>
+            </div>
+          </div>
+          
+          <div className='summary-section'>
+            <div className="summary-row">
+              <span>Subtotal</span>
+              <span className='summary-row-price'>${cartTotal.toFixed(2)}</span>
+            </div>
+            <div className="summary-row">
+              <span>Discount</span>
+              <span className='summary-discount-price'>- {cartTotal >= 50 ? 'Free' : '$4.99'}</span>
+            </div>
+            <div className="summary-row">
+              <span>Tax</span>
+              <span className='summary-tax-price'>+ ${(cartTotal * 0.08).toFixed(2)}</span>
+            </div>
+            <hr className="summary-divider" />
+            <div className="summary-row total">
+              <span>Total</span>
+              <span>${(cartTotal + (cartTotal < 50 ? 4.99 : 0) + cartTotal * 0.08).toFixed(2)}</span>
+            </div>
+            <button className="checkout-btn" id="checkout-btn">
+              Checkout
+            </button>
+            <div className="payment-methods">
+               <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+               <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" />
+               <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="Paypal" />
+               <img src="https://img.icons8.com/color/48/000000/google-pay.png" alt="Google Pay" />
+               <img src="https://img.icons8.com/color/48/000000/apple-pay.png" alt="Apple Pay" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section className="saved-for-later-section">
+        <h3>Saved for later</h3>
+        <div className="saved-products-grid">
+          {savedForLaterProducts.map((product) => (
+            <div key={product.id} className="saved-product-card">
+              <div className="saved-product-image">
+                <img src={product.image} alt={product.name} />
+              </div>
+              <div className="saved-product-info">
+                <p className="saved-product-price">${product.price.toFixed(2)}</p>
+                <p className="saved-product-name">{product.name}</p>
+                <button className="move-to-cart-btn">
+                  <ShoppingCart size={16} /> Move to cart
+                </button>
               </div>
             </div>
           ))}
         </div>
+      </section>
 
-        <div className="cart-summary">
-          <h3>Order Summary</h3>
-          <div className="summary-row">
-            <span>Subtotal</span>
-            <span>${cartTotal.toFixed(2)}</span>
-          </div>
-          <div className="summary-row">
-            <span>Shipping</span>
-            <span>{cartTotal >= 50 ? 'Free' : '$4.99'}</span>
-          </div>
-          <div className="summary-row">
-            <span>Tax</span>
-            <span>${(cartTotal * 0.08).toFixed(2)}</span>
-          </div>
-          <div className="summary-divider"></div>
-          <div className="summary-row total">
-            <span>Total</span>
-            <span>${(cartTotal + (cartTotal < 50 ? 4.99 : 0) + cartTotal * 0.08).toFixed(2)}</span>
-          </div>
-          <button className="btn btn-primary checkout-btn" id="checkout-btn">
-            Proceed to Checkout
-          </button>
-          <Link to="/products" className="continue-link">Continue Shopping</Link>
+      <section className="cart-cta-banner">
+        <div className="banner-content">
+          <h3>Super Discount on your first purchase</h3>
+          <p>Free delivery on orders over $50 or use our special coupon code.</p>
         </div>
-      </div>
+        <button className="shop-now-banner-btn">Shop now</button>
+      </section>
     </div>
   );
 }
