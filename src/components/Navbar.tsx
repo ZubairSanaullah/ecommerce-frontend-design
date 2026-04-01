@@ -8,12 +8,7 @@ export default function Navbar() {
   const { cartCount } = useCart();
   const [mobileOpen, setMobileOpen ] = useState(false);
   const [shipToOpen, setShipToOpen] = useState(false);
-<<<<<<< HEAD
   const { pathname } = useLocation();
-=======
-  const location = useLocation();
-  const isCartPage = location.pathname === '/cart';
->>>>>>> 127d30669e86865626dbd061bf8095ae4e34e2c9
 
   return (
     <nav className="navbar" id="main-navbar">
@@ -68,11 +63,7 @@ export default function Navbar() {
       </div>
 
       {/* Secondary Navbar */}
-<<<<<<< HEAD
       {pathname !== '/cart' && (
-=======
-      {!isCartPage && (
->>>>>>> 127d30669e86865626dbd061bf8095ae4e34e2c9
         <div className="sub-navbar">
           <div className="sub-navbar-inner">
             <div className="sub-nav-left">

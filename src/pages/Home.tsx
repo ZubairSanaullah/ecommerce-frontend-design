@@ -4,7 +4,7 @@ import { products } from '../data/products';
 import './Home.css';
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 10);
+  const recommendedProducts = [...products, ...products, ...products].slice(0, 10);
 
   return (
     <div className="home" id="home-page">
@@ -290,8 +290,8 @@ export default function Home() {
           <h2>Recommended items</h2>
         </div>
         <div className="product-grid">
-          {featuredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} hideCart />
+          {recommendedProducts.map((product, index) => (
+            <ProductCard key={`${product.id}-${index}`} product={product} hideCart />
           ))}
         </div>
       </section>
