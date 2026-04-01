@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ShoppingCart } from 'lucide-react';
 import type { Product } from '../types';
-import { useCart } from '../context/CartContext';
 import './ProductCard.css';
 
 interface ProductCardProps {
@@ -9,8 +7,12 @@ interface ProductCardProps {
   hideCart?: boolean;
 }
 
+<<<<<<< HEAD
 export default function ProductCard({ product, hideCart = false }: ProductCardProps) {
   const { addToCart } = useCart();
+=======
+export default function ProductCard({ product }: ProductCardProps) {
+>>>>>>> 127d30669e86865626dbd061bf8095ae4e34e2c9
 
 
   return (
@@ -32,6 +34,7 @@ export default function ProductCard({ product, hideCart = false }: ProductCardPr
           <div className="product-card-prices">
             <span className="product-card-price">${product.price.toFixed(2)}</span>
           </div>
+<<<<<<< HEAD
           {!hideCart && (
             <button
               className="product-card-cart-btn"
@@ -42,6 +45,8 @@ export default function ProductCard({ product, hideCart = false }: ProductCardPr
               <ShoppingCart size={16} />
             </button>
           )}
+=======
+>>>>>>> 127d30669e86865626dbd061bf8095ae4e34e2c9
         </div>
       </div>
     </div>
