@@ -33,9 +33,12 @@ export default function Categories() {
     setExpanded(prev => ({ ...prev, [section]: !prev[section] }));
   };
 
-  const filteredProducts = products.filter(p => 
-     activeCategory === 'All' || p.category === activeCategory || activeCategory === 'Mobile accessory'
-  ).slice(0, 9); // Mocking results
+  const filteredProducts = products.filter(p => {
+    if (viewMode === 'grid') {
+      return p.category === 'Smartphone';
+    }
+    return activeCategory === 'All' || p.category === activeCategory || activeCategory === 'Mobile accessory';
+  });
 
   return (
     <div className="categories-page-v2" id="categories-page">
@@ -53,6 +56,8 @@ export default function Categories() {
         <aside className="filters-sidebar">
           
           {/* Category List */}
+
+          <div className="filter-divider"></div>
           <div className="filter-section">
             <div className="filter-header" onClick={() => toggleSection('category')}>
               <h3>Category</h3>
@@ -193,13 +198,13 @@ export default function Categories() {
           <div className="results-header-bar">
              <div className="results-info">
                 <span className="item-count">12,911 items in <strong>Mobile accessory</strong></span>
-                <label className="verified-checkbox">
-                   <input type="checkbox" defaultChecked />
-                   <span>Verified only</span>
-                </label>
              </div>
              
              <div className="results-controls">
+                <label className="verified-checkbox">
+                   <input type="checkbox"/>
+                   <span>Verified only</span>
+                </label>
                 <select className="featured-dropdown">
                    <option>Featured</option>
                    <option>Newest</option>
@@ -223,18 +228,23 @@ export default function Categories() {
           </div>
 
           {/* Active Filters / Chips */}
-          <div className="active-filters-chips">
-             <span className="filter-chip">Samsung <span className="close">×</span></span>
-             <span className="filter-chip">Apple <span className="close">×</span></span>
-             <span className="filter-chip">Piltak <span className="close">×</span></span>
-             <span className="clear-all">Clear all filters</span>
-          </div>
+          {viewMode === 'grid' && (
+            <div className="active-filters-chips">
+               <span className="filter-chip">Samsung <span className="close">×</span></span>
+               <span className="filter-chip">Apple <span className="close">×</span></span>
+               <span className="filter-chip">Poco <span className="close">×</span></span>
+               <span className="filter-chip">Metallic <span className="close">×</span></span>
+               <span className="filter-chip">4 star <span className="close">×</span></span>
+               <span className="filter-chip">3 star <span className="close">×</span></span>
+               <span className="clear-all">Clear all filters</span>
+            </div>
+          )}
 
           {/* Product Listing */}
           <div className={`products-container ${viewMode}-view`}>
              {viewMode === 'grid' ? (
                 <div className="product-grid-view">
-                   {filteredProducts.map(p => <ProductCard key={p.id} product={p} />)}
+                   {filteredProducts.map(p => <ProductCard key={p.id} product={p} variant="categories" />)}
                 </div>
              ) : (
                 <div className="product-list-view">
