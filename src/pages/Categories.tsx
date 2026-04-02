@@ -35,10 +35,9 @@ export default function Categories() {
   };
 
   const filteredProducts = products.filter(p => {
-    if (viewMode === 'grid') {
-      return p.category === 'Smartphone';
-    }
-    return activeCategory === 'All' || p.category === activeCategory || activeCategory === 'Mobile accessory';
+    // Show Smartphone category for the default "Mobile accessory" view to match original intent
+    const targetCategory = activeCategory === 'Mobile accessory' ? 'Smartphone' : activeCategory;
+    return targetCategory === 'All' || p.category === targetCategory;
   });
 
   return (
@@ -202,7 +201,7 @@ export default function Categories() {
           {/* Results Header */}
           <div className="results-header-bar">
              <div className="results-info">
-                <span className="item-count">12,911 items in <strong>Mobile accessory</strong></span>
+                <span className="item-count">{filteredProducts.length} items in <strong>{activeCategory}</strong></span>
              </div>
              
              <div className="results-controls">

@@ -111,7 +111,7 @@
 }
 
 .navbar-links {
-  display: none; /* Hidden on desktop to save space with wide search bar */
+  display: none;
 }
 
 .navbar-links a {
@@ -333,7 +333,9 @@
   cursor: pointer;
   width: 100%;
   text-align: left;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .dropdown-item:hover {
@@ -347,7 +349,138 @@
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
+/* ========== Mobile Sidebar & Overlay ========== */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100%;
+  background: var(--bg);
+  z-index: 1001;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-sidebar.open {
+  transform: translateX(280px);
+}
+
+.sidebar-header.grey-header {
+  padding: 24px;
+  background: #eff2f4;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.sidebar-user-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  background: #dfe6eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b96a5;
+}
+
+.sidebar-login-text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sidebar-login-text a {
+  text-decoration: none;
+  color: var(--text-h);
+}
+
+.sidebar-login-text span {
+  color: #8b96a5;
+  margin: 0 4px;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 0;
+}
+
+.sidebar-section {
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-section a,
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--text-h);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 0;
+  transition: color 0.2s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-section a svg,
+.sidebar-btn svg {
+  color: #8b96a5;
+}
+
+.text-only-links a {
+  padding: 10px 0;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 12px 0;
+}
+
+.close-sidebar {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 4px;
+}
+
+@media (max-width: 992px) {
   .navbar-inner {
     height: auto;
     flex-wrap: wrap;
@@ -356,53 +489,41 @@
   }
 
   .navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 20px;
   }
 
   .search-bar {
-    order: 3; /* Move search below logo and icons */
+    order: 3;
     min-width: 100%;
     margin-top: 4px;
   }
 
-  .navbar-links {
-    position: fixed;
-    top: 110px;
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    flex-direction: column;
-    padding: 24px;
-    gap: 20px;
-    border-bottom: 1px solid var(--border);
-    transform: translateY(-150%);
-    transition: transform 0.3s ease;
-    z-index: 99;
-    display: flex; /* Re-enable for mobile menu */
-  }
-
-  .navbar-links.open {
-    transform: translateY(0);
-  }
-
   .mobile-menu-btn {
     display: flex;
+    order: 1;
+  }
+
+  .navbar-actions {
+    order: 2;
   }
 
   .desktop-only {
-    display: none;
+    display: none !important;
   }
 
   .sub-navbar-inner {
     padding: 0 20px;
     height: 48px;
     overflow-x: auto;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .sub-navbar-inner::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
+    display: none;
   }
 
   .sub-nav-left {

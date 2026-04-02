@@ -200,23 +200,53 @@
   color: #2563eb;
 }
 
+@media (max-width: 992px) {
+  .footer-inner {
+    padding: 40px 24px;
+    gap: 32px;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-inner {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 48px;
   }
 
   .footer-brand {
-    max-width: 100%;
+    max-width: 400px;
   }
 
   .footer-columns {
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    text-align: left;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
   }
 
   .footer-col {
     align-items: center;
+  }
+
+  .footer-logo {
+    font-size: 18px;
   }
 }
