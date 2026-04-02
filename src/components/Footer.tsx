@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa6';
@@ -54,8 +54,8 @@ export default function Footer() {
           </div>
           <div className='get-app'>
             <h4>Get the App</h4>
-            <img src="/src/assets/Layout/Misc/market-button.png" alt="App Store" />
-            <img src="/src/assets/Layout/Misc/Group.png" alt="Google Play" />
+            <img src="/media/Layout/Misc/market-button.png" alt="App Store" />
+            <img src="/media/Layout/Misc/Group.png" alt="Google Play" />
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ export default function Footer() {
             onClick={() => setShipToOpen(!shipToOpen)}
             onMouseEnter={() => setShipToOpen(true)}
           >
-            <img src="/src/assets/Layout1/Image/flags/US@2x.png" alt="US" className="footer-flag-icon" />
+            <img src="/media/Layout1/Image/flags/US@2x.png" alt="US" className="footer-flag-icon" />
             <span>English</span> 
             <ChevronDown size={14} />
           </button>
@@ -76,28 +76,28 @@ export default function Footer() {
           {shipToOpen && (
             <div className="footer-dropdown-menu">
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/US@2x.png" alt="USA" className="footer-flag-icon" /> USA
+                <img src="/media/Layout1/Image/flags/US@2x.png" alt="USA" className="footer-flag-icon" /> USA
               </button>
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/GB@2x.png" alt="UK" className="footer-flag-icon" /> UK
+                <img src="/media/Layout1/Image/flags/GB@2x.png" alt="UK" className="footer-flag-icon" /> UK
               </button>
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/FR@2x.png" alt="France" className="footer-flag-icon" /> France
+                <img src="/media/Layout1/Image/flags/FR@2x.png" alt="France" className="footer-flag-icon" /> France
               </button>
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/IT@2x.png" alt="Italy" className="footer-flag-icon" /> Italy
+                <img src="/media/Layout1/Image/flags/IT@2x.png" alt="Italy" className="footer-flag-icon" /> Italy
               </button>
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/CN@2x.png" alt="China" className="footer-flag-icon" /> China
+                <img src="/media/Layout1/Image/flags/CN@2x.png" alt="China" className="footer-flag-icon" /> China
               </button>
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/AE@2x.png" alt="UAE" className="footer-flag-icon" /> UAE
+                <img src="/media/Layout1/Image/flags/AE@2x.png" alt="UAE" className="footer-flag-icon" /> UAE
               </button>
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/RU@2x.png" alt="Russia" className="footer-flag-icon" /> Russia
+                <img src="/media/Layout1/Image/flags/RU@2x.png" alt="Russia" className="footer-flag-icon" /> Russia
               </button>
               <button className="footer-dropdown-item">
-                <img src="/src/assets/Layout1/Image/flags/DK@2x.png" alt="Denmark" className="footer-flag-icon" /> Denmark
+                <img src="/media/Layout1/Image/flags/DK@2x.png" alt="Denmark" className="footer-flag-icon" /> Denmark
               </button>
             </div>
           )}
@@ -106,3 +106,4 @@ export default function Footer() {
     </footer>
   );
 }
+

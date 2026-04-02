@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { Truck, Shield, Search, Package, User } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
@@ -32,7 +32,7 @@ export default function Home() {
 
           {/* Middle - Trending */}
           <div className='categories-trending'>
-            <img src="/src/assets/Image/backgrounds/6.png" alt="Trending" className="categories-trending-bg" />
+            <img src="/media/Image/backgrounds/6.png" alt="Trending" className="categories-trending-bg" />
             <div className='categories-trending-content'>
               <p>Latest trending</p>
               <h2>Electronic items</h2>
@@ -95,35 +95,35 @@ export default function Home() {
         </div>
         <div className='deals-and-offer-grid'>
           <div className='deals-and-offer-item'>
-            <img src="/src/assets/Image/tech/2.png" alt="1" className="deals-and-offer-img" />
+            <img src="/media/Image/tech/2.png" alt="1" className="deals-and-offer-img" />
             <div className='deals-and-offer-info'>
               <h4>Smart Watches</h4>
               <p>-25%</p>
             </div>
           </div>
           <div className='deals-and-offer-item'>
-            <img src="/src/assets/Image/tech/7.png" alt="2" className="deals-and-offer-img" />
+            <img src="/media/Image/tech/7.png" alt="2" className="deals-and-offer-img" />
             <div className='deals-and-offer-info'>
               <h4>Laptops</h4>
               <p>-15%</p>
             </div>
           </div>
           <div className='deals-and-offer-item'>
-            <img src="/src/assets/Image/tech/1.png" alt="3" className="deals-and-offer-img" />
+            <img src="/media/Image/tech/1.png" alt="3" className="deals-and-offer-img" />
             <div className='deals-and-offer-info'>
               <h4>Cameras</h4>
               <p>-40%</p>
             </div>
           </div>
           <div className='deals-and-offer-item'>
-            <img src="/src/assets/Image/tech/4.png" alt="4" className="deals-and-offer-img" />
+            <img src="/media/Image/tech/4.png" alt="4" className="deals-and-offer-img" />
             <div className='deals-and-offer-info'>
               <h4>Headphones</h4>
               <p>-25%</p>
             </div>
           </div>
           <div className='deals-and-offer-item'>
-            <img src="/src/assets/Image/tech/3.png" alt="5" className="deals-and-offer-img" />
+            <img src="/media/Image/tech/3.png" alt="5" className="deals-and-offer-img" />
             <div className='deals-and-offer-info'>
               <h4>Mobile Phones</h4>
               <p>-10%</p>
@@ -135,7 +135,7 @@ export default function Home() {
       {/* Home and outdoor */}
       <section className='home-and-outdoor-section'>
         <div className='home-and-outdoor-header'>
-          <img src="/src/assets/Image/backgrounds/5.png" alt="1" className="home-and-outdoor-bg" />
+          <img src="/media/Image/backgrounds/5.png" alt="1" className="home-and-outdoor-bg" />
           <h2>Home and outdoor</h2>
           <p>Source now</p>
         </div>
@@ -145,56 +145,56 @@ export default function Home() {
               <h4>Soft Chairs</h4>
               <p>From <span>USD 19</span></p>
             </div>
-            <img src="/src/assets/Image/interior/1.png" alt="1" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/1.png" alt="1" className="home-and-outdoor-img" />
           </div>
           <div className='home-and-outdoor-item'>
             <div className='home-and-outdoor-info'>
               <h4>Lamps</h4>
               <p>From <span>USD 9</span></p>
             </div>
-            <img src="/src/assets/Image/interior/3.png" alt="2" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/3.png" alt="2" className="home-and-outdoor-img" />
           </div>
           <div className='home-and-outdoor-item'>
             <div className='home-and-outdoor-info'>
               <h4>Mattress</h4>
               <p>From <span>USD 15</span></p>
             </div>
-            <img src="/src/assets/Image/interior/9.png" alt="3" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/9.png" alt="3" className="home-and-outdoor-img" />
           </div>
           <div className='home-and-outdoor-item'>
             <div className='home-and-outdoor-info'>
               <h4>Utensils</h4>
               <p>From <span>USD 5</span></p>
             </div>
-            <img src="/src/assets/Image/interior/2.png" alt="4" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/2.png" alt="4" className="home-and-outdoor-img" />
           </div>
           <div className='home-and-outdoor-item'>
             <div className='home-and-outdoor-info'>
               <h4>Kitchen Mixers</h4>
               <p>From <span>USD 12</span></p>
             </div>
-            <img src="/src/assets/Image/interior/6.png" alt="5" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/6.png" alt="5" className="home-and-outdoor-img" />
           </div>
           <div className='home-and-outdoor-item'>
             <div className='home-and-outdoor-info'>
               <h4>Blenders</h4>
               <p>From <span>USD 10</span></p>
             </div>
-            <img src="/src/assets/Image/interior/5.png" alt="6" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/5.png" alt="6" className="home-and-outdoor-img" />
           </div>
           <div className='home-and-outdoor-item'>
             <div className='home-and-outdoor-info'>
               <h4>Home Appliances</h4>
               <p>From <span>USD 8</span></p>
             </div>
-            <img src="/src/assets/Image/interior/4.png" alt="7" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/4.png" alt="7" className="home-and-outdoor-img" />
           </div>
           <div className='home-and-outdoor-item'>
             <div className='home-and-outdoor-info'>
               <h4>Coffee Makers</h4>
               <p>From <span>USD 12</span></p>
             </div>
-            <img src="/src/assets/Image/interior/8.png" alt="8" className="home-and-outdoor-img" />
+            <img src="/media/Image/interior/8.png" alt="8" className="home-and-outdoor-img" />
           </div>         
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function Home() {
       {/* Consumer Gadgets */}
       <section className='consumer-gadgets-section'>
         <div className='consumer-gadgets-header'>
-          <img src="/src/assets/Image/backgrounds/8.png" alt="1" className="consumer-gadgets-bg" />
+          <img src="/media/Image/backgrounds/8.png" alt="1" className="consumer-gadgets-bg" />
           <h2>Consumer electronics <span>and gadgets</span></h2>
           <p>Source now</p>
         </div>
@@ -212,56 +212,56 @@ export default function Home() {
               <h4>Smart Watches</h4>
               <p>From <span>USD 19</span></p>
             </div>
-            <img src="/src/assets/Image/tech/2.png" alt="1" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/2.png" alt="1" className="consumer-gadgets-img" />
           </div>
           <div className='consumer-gadgets-item'>
             <div className='consumer-gadgets-info'>
               <h4>Cameras</h4>
               <p>From <span>USD 9</span></p>
             </div>
-            <img src="/src/assets/Image/tech/1.png" alt="2" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/1.png" alt="2" className="consumer-gadgets-img" />
           </div>
           <div className='consumer-gadgets-item'>
             <div className='consumer-gadgets-info'>
               <h4>Headphones</h4>
               <p>From <span>USD 15</span></p>
             </div>
-            <img src="/src/assets/Image/tech/9.png" alt="3" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/9.png" alt="3" className="consumer-gadgets-img" />
           </div>
           <div className='consumer-gadgets-item'>
             <div className='consumer-gadgets-info'>
               <h4>Tablets</h4>
               <p>From <span>USD 5</span></p>
             </div>
-            <img src="/src/assets/Image/tech/5.png" alt="4" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/5.png" alt="4" className="consumer-gadgets-img" />
           </div>
           <div className='consumer-gadgets-item'>
             <div className='consumer-gadgets-info'>
               <h4>Gaming Set</h4>
               <p>From <span>USD 12</span></p>
             </div>
-            <img src="/src/assets/Image/tech/4.png" alt="5" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/4.png" alt="5" className="consumer-gadgets-img" />
           </div>
           <div className='consumer-gadgets-item'>
             <div className='consumer-gadgets-info'>
               <h4>Laptops & PC</h4>
               <p>From <span>USD 340</span></p>
             </div>
-            <img src="/src/assets/Image/tech/7.png" alt="6" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/7.png" alt="6" className="consumer-gadgets-img" />
           </div>
           <div className='consumer-gadgets-item'>
             <div className='consumer-gadgets-info'>
               <h4>Smart Phones</h4>
               <p>From <span>USD 8</span></p>
             </div>
-            <img src="/src/assets/Image/tech/3.png" alt="7" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/3.png" alt="7" className="consumer-gadgets-img" />
           </div>
           <div className='consumer-gadgets-item'>
             <div className='consumer-gadgets-info'>
               <h4>Gaming Phones</h4>
               <p>From <span>USD 180</span></p>
             </div>
-            <img src="/src/assets/Image/tech/6.png" alt="8" className="consumer-gadgets-img" />
+            <img src="/media/Image/tech/6.png" alt="8" className="consumer-gadgets-img" />
           </div>         
         </div>
       </section>
@@ -269,7 +269,7 @@ export default function Home() {
       {/* Inquiry Section */}
       <section className='inquiry-section'>
         <div className='inquiry-header'>
-          <img src="/src/assets/Image/backgrounds/7.png" alt="1" className="inquiry-bg" />
+          <img src="/media/Image/backgrounds/7.png" alt="1" className="inquiry-bg" />
           <h2>An easy way to send <span>requests to all suppliers</span></h2>
           <p>We will send your request to all suppliers and get the best prices for you.</p>
         </div>
@@ -306,7 +306,7 @@ export default function Home() {
         </div>
         <div className='extra-services-grid'>
           <div className='extra-service'>
-            <img src="/src/assets/Image/backgrounds/1.png" alt="1" className="extra-service-img" />
+            <img src="/media/Image/backgrounds/1.png" alt="1" className="extra-service-img" />
             <div className="extra-service-icon">
               <Search size={24} />
             </div>
@@ -315,7 +315,7 @@ export default function Home() {
             </div>
           </div>
           <div className='extra-service'>
-            <img src="/src/assets/Image/backgrounds/2.png" alt="2" className="extra-service-img" />
+            <img src="/media/Image/backgrounds/2.png" alt="2" className="extra-service-img" />
             <div className="extra-service-icon">
               <Package size={24} />
             </div>
@@ -324,7 +324,7 @@ export default function Home() {
             </div>
           </div>
           <div className='extra-service'>
-            <img src="/src/assets/Image/backgrounds/3.png" alt="3" className="extra-service-img" />
+            <img src="/media/Image/backgrounds/3.png" alt="3" className="extra-service-img" />
             <div className="extra-service-icon">
               <Truck size={24} />
             </div>
@@ -333,7 +333,7 @@ export default function Home() {
             </div>
           </div>
           <div className='extra-service'>
-            <img src="/src/assets/Image/backgrounds/4.png" alt="4" className="extra-service-img" />
+            <img src="/media/Image/backgrounds/4.png" alt="4" className="extra-service-img" />
             <div className="extra-service-icon">
               <Shield size={24} />
             </div>
@@ -351,70 +351,70 @@ export default function Home() {
         </div>
         <div className="suppliers-grid">
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/AE@2x.png" alt="AE" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/AE@2x.png" alt="AE" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>Arabic Emirates</h3>
               <p>zubayrstore.ae</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/icon.png" alt="AU" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/icon.png" alt="AU" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>Australia</h3>
               <p>zubayrstore.com.au</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/US@2x.png" alt="US" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/US@2x.png" alt="US" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>United States</h3>
               <p>zubayrstore.com</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/RU@2x.png" alt="RU" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/RU@2x.png" alt="RU" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>Russia</h3>
               <p>zubayrstore.ru</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/IT@2x.png" alt="IT" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/IT@2x.png" alt="IT" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>Italy</h3>
               <p>zubayrstore.it</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/DK@2x.png" alt="DK" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/DK@2x.png" alt="DK" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>Denmark</h3>
               <p>zubayrstore.dk</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/FR@2x.png" alt="FR" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/FR@2x.png" alt="FR" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>France</h3>
               <p>zubayrstore.fr</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/DE@2x.png" alt="DE" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/DE@2x.png" alt="DE" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>Germany</h3>
               <p>zubayrstore.de</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/GB@2x.png" alt="GB" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/GB@2x.png" alt="GB" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>Great Britain</h3>
               <p>zubayrstore.co.uk</p>
             </div>
           </div>
           <div className="country-flag">
-            <img src="/src/assets/Layout1/Image/flags/CN@2x.png" alt="CN" className="country-flag-icon" />
+            <img src="/media/Layout1/Image/flags/CN@2x.png" alt="CN" className="country-flag-icon" />
             <div className="country-flag-info">
               <h3>China</h3>
               <p>zubayrstore.cn</p>
@@ -428,3 +428,4 @@ export default function Home() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+﻿import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, User, MessageSquare, Package, Menu, X, ChevronDown, Heart, Globe, PhoneCall, Info } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useState } from 'react';
@@ -99,34 +99,34 @@ export default function Navbar() {
                     onClick={() => setShipToOpen(!shipToOpen)}
                     onMouseEnter={() => setShipToOpen(true)}
                   >
-                    Ship to <img src="/src/assets/Layout1/Image/flags/DE@2x.png" alt="Germany" className="flag-icon" /> <ChevronDown size={14} />
+                    Ship to <img src="/media/Layout1/Image/flags/DE@2x.png" alt="Germany" className="flag-icon" /> <ChevronDown size={14} />
                   </button>
                   
                   {shipToOpen && (
                     <div className="dropdown-menu">
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/US@2x.png" alt="USA" className="flag-icon" /> USA
+                        <img src="/media/Layout1/Image/flags/US@2x.png" alt="USA" className="flag-icon" /> USA
                       </button>
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/GB@2x.png" alt="UK" className="flag-icon" /> UK
+                        <img src="/media/Layout1/Image/flags/GB@2x.png" alt="UK" className="flag-icon" /> UK
                       </button>
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/FR@2x.png" alt="France" className="flag-icon" /> France
+                        <img src="/media/Layout1/Image/flags/FR@2x.png" alt="France" className="flag-icon" /> France
                       </button>
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/IT@2x.png" alt="Italy" className="flag-icon" /> Italy
+                        <img src="/media/Layout1/Image/flags/IT@2x.png" alt="Italy" className="flag-icon" /> Italy
                       </button>
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/CN@2x.png" alt="China" className="flag-icon" /> China
+                        <img src="/media/Layout1/Image/flags/CN@2x.png" alt="China" className="flag-icon" /> China
                       </button>
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/AE@2x.png" alt="UAE" className="flag-icon" /> UAE
+                        <img src="/media/Layout1/Image/flags/AE@2x.png" alt="UAE" className="flag-icon" /> UAE
                       </button>
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/RU@2x.png" alt="Russia" className="flag-icon" /> Russia
+                        <img src="/media/Layout1/Image/flags/RU@2x.png" alt="Russia" className="flag-icon" /> Russia
                       </button>
                       <button className="dropdown-item">
-                        <img src="/src/assets/Layout1/Image/flags/DK@2x.png" alt="Denmark" className="flag-icon" /> Denmark
+                        <img src="/media/Layout1/Image/flags/DK@2x.png" alt="Denmark" className="flag-icon" /> Denmark
                       </button>
                     </div>
                   )}
@@ -184,3 +184,4 @@ export default function Navbar() {
     </>
   );
 }
+
