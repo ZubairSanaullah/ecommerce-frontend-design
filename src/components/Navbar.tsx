@@ -72,6 +72,7 @@ export default function Navbar() {
                 All category
               </Link>
               <div className="sub-nav-links desktop-only">
+                <Link to="/categories">Categories</Link>
                 <Link to="/offers">Hot offers</Link>
                 <Link to="/gifts">Gift boxes</Link>
                 <Link to="/projects">Projects</Link>

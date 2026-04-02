@@ -17,6 +17,7 @@ export default function Home() {
           {/* Left - Category List */}
           <div className='categories-list'>
             <ul>
+              <li><Link to="/categories">Categories</Link></li>
               <li className='active'>Automobiles</li>
               <li>Clothes and wear</li>
               <li>Home interior</li>

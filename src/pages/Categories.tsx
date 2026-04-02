@@ -18,6 +18,7 @@ export default function Categories() {
   const [activeCategory] = useState('Mobile accessory');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [showFilters, setShowFilters] = useState(false);
   
   // Expanded/Collapsed state for filter sections
   const [expanded, setExpanded] = useState({
@@ -53,7 +54,11 @@ export default function Categories() {
 
       <div className="categories-content-wrapper">
         {/* Sidebar (30%) */}
-        <aside className="filters-sidebar">
+        <aside className={`filters-sidebar ${showFilters ? 'mobile-show' : ''}`}>
+          <div className="mobile-filter-header">
+            <h3>Filters</h3>
+            <button className="close-filters-btn" onClick={() => setShowFilters(false)}>×</button>
+          </div>
           
           {/* Category List */}
 
@@ -201,7 +206,10 @@ export default function Categories() {
              </div>
              
              <div className="results-controls">
-                <label className="verified-checkbox">
+                <button className="mobile-filter-btn" onClick={() => setShowFilters(true)}>
+                   Filters (3)
+                </button>
+                <label className="verified-checkbox desktop-only">
                    <input type="checkbox"/>
                    <span>Verified only</span>
                 </label>

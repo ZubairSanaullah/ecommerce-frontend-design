@@ -24,13 +24,6 @@ export default function Footer() {
         </div>
 
         <div className="footer-columns">
-          {/* <div className="footer-col">
-            <h4>Shop</h4>
-            <Link to="/products">All Products</Link>
-            <Link to="/products?category=Electronics">Electronics</Link>
-            <Link to="/products?category=Clothing">Clothing</Link>
-            <Link to="/products?category=Accessories">Accessories</Link>
-          </div> */}
           <div className="footer-col">
             <h4>About</h4>
             <a href="#">About Us</a>

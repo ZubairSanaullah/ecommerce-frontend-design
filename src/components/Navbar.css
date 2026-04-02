@@ -8,9 +8,6 @@
   border-bottom: 1px solid var(--border);
   transition: background 0.3s;
 }
-
-
-
 .navbar-inner {
   max-width: 1400px;
   margin: 0 auto;
@@ -400,10 +397,17 @@
     padding: 0 20px;
     height: 48px;
     overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  }
+
+  .sub-navbar-inner::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
   }
 
   .sub-nav-left {
-    gap: 16px;
+    gap: 20px;
+    flex-shrink: 0;
   }
 
   .all-categories-btn {
@@ -411,6 +415,6 @@
   }
 
   .sub-nav-right {
-    display: none; /* Hide complex dropdowns on mobile sub-nav for simplicity */
+    display: none;
   }
 }
