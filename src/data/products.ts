@@ -1,4 +1,4 @@
-﻿import type { Product } from '../types';
+import type { Product } from '../types';
 
 export const products: Product[] = [
   {
@@ -284,22 +284,6 @@ export const products: Product[] = [
     color: 'Sea',
     material: 'Recycled Aluminum',
     seller: 'Google Official'
-  },
-  {
-    id: 18,
-    name: 'Nothing Phone (2)',
-    price: 599.00,
-    originalPrice: 699.00,
-    image: '/media/Image/tech/8.png',
-    galleryImages: ['/media/Image/tech/8.png'],
-    category: 'Smartphone',
-    rating: 4.4,
-    reviews: 320,
-    description: 'Come to the bright side. Unique Glyph Interface and premium Nothing OS.',
-    size: '256GB',
-    color: 'Dark Gray',
-    material: 'Sustainably Sourced Aluminum',
-    seller: 'Nothing Store'
   },
   {
     id: 19,

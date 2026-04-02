@@ -28,6 +28,7 @@ export default function ProductDetail() {
   const pricingTiers = product.pricingTiers || [
     { quantity: '1-10 pcs', price: product.price },
     { quantity: '11-100 pcs', price: product.price * 0.9 },
+    { quantity: '101-500 pcs', price: product.price * 0.8 },
   ];
 
   // You may like products logic
