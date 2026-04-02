@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import { Truck, Shield, Search, Package, User } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';
+import Newsletter from '../components/Newsletter';
 import './Home.css';
 
 export default function Home() {
@@ -23,7 +25,7 @@ export default function Home() {
               <li>Sports and outdoor</li>
               <li>Animal and pets</li>
               <li>Machinery tools</li>
-              <li>More categories</li>
+              <li><Link to="/categories">More categories</Link></li>
             </ul>
           </div>
 
@@ -420,17 +422,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="cta-banner" id="cta-section">
-        <div className="cta-content">
-          <h2>Subscribe to our newsletter</h2>
-          <p>Get daily news on upcoming offers from many suppliers all over the world</p>
-          <div className="cta-input-wrap">
-            <input type="email" placeholder="Email" className="cta-input" id="cta-email-input" />
-            <button className="btn btn-primary" id="subscribe-btn">Subscribe</button>
-          </div>
-        </div>
-      </section>
+      {/* CTA Banner Area */}
+      <Newsletter />
     </div>
   );
 }

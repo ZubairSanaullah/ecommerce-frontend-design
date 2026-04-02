@@ -67,10 +67,10 @@ export default function Navbar() {
         <div className="sub-navbar">
           <div className="sub-navbar-inner">
             <div className="sub-nav-left">
-              <button className="all-categories-btn">
+              <Link to="/categories" className="all-categories-btn">
                 <Menu size={18} />
                 All category
-              </button>
+              </Link>
               <div className="sub-nav-links desktop-only">
                 <Link to="/offers">Hot offers</Link>
                 <Link to="/gifts">Gift boxes</Link>

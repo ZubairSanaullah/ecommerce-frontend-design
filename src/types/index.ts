@@ -14,6 +14,11 @@ export interface Product {
   material?: string;
   seller?: string;
   galleryImages?: string[];
+  subcategory?: string;
+  country?: string;
+  verified?: boolean;
+  moq?: number; // Minimum Order Quantity
+  pricingTiers?: { quantity: string; price: number }[];
 }
 
 export interface CartItem extends Product {

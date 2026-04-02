@@ -16,7 +16,16 @@ export const products: Product[] = [
     color: 'White',
     material: '100% Cotton',
     seller: 'Zubayr Official Store',
-    badge: 'Best Seller'
+    badge: 'Best Seller',
+    subcategory: 'Men\'s Fashion',
+    country: 'CN', // China
+    verified: true,
+    moq: 1,
+    pricingTiers: [
+      { quantity: '1-10 pcs', price: 10.30 },
+      { quantity: '11-100 pcs', price: 9.50 },
+      { quantity: '100+ pcs', price: 8.90 }
+    ]
   },
   {
     id: 2,
