@@ -1,20 +1,14 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Star, ShoppingCart, Minus, Plus, Truck, Shield, RotateCcw, Heart, Share2, MessageSquare, Search, Send, ExternalLink, Globe, CheckCircle2, ChevronRight } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
+import { Star, Truck, Heart, Send, Globe, CheckCircle2, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { products } from '../data/products';
-import { useCart } from '../context/CartContext';
 import './ProductDetail.css';
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const product = products.find((p) => p.id === Number(id));
-  const { addToCart } = useCart();
-
-  const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(product?.image || '');
-  const [selectedSize, setSelectedSize] = useState(product?.size || '');
-  const [selectedColor, setSelectedColor] = useState(product?.color || '');
+
   const [activeTab, setActiveTab] = useState('Overview');
 
   if (!product) {
@@ -28,17 +22,7 @@ export default function ProductDetail() {
 
   const images = product.galleryImages || [product.image];
 
-  const handleAddToCart = () => {
-    const productToAdd = {
-      ...product,
-      selectedSize,
-      selectedColor
-    };
-    for (let i = 0; i < quantity; i++) {
-      addToCart(productToAdd);
-    }
-    navigate('/cart');
-  };
+
 
   // Mock pricing tiers if not present
   const pricingTiers = product.pricingTiers || [
@@ -49,13 +33,12 @@ export default function ProductDetail() {
   // You may like products logic
   const youMayLikeProducts = [...products]
     .filter(p => p.id !== product.id)
-    .sort(() => 0.4 - Math.random())
+    .reverse()
     .slice(0, 5);
 
   // Related products logic
   const relatedProducts = [...products]
-    .filter(p => p.id !== product.id)
-    .sort(() => 0.5 - Math.random())
+    .filter(p => p.category === product.category && p.id !== product.id)
     .slice(0, 6);
 
   return (
